@@ -126,11 +126,7 @@ function handleIntersectionOpacity(entries, target, opacityValue) {
 }
 
 // Helper function to observe intersection and call the appropriate handler
-function observeIntersection(selector, callback, options) {
-  const element = document.querySelector(selector);
-  const observer = new IntersectionObserver(callback, options);
-  observer.observe(element);
-}
+
 
 // Observing intersections and applying transformations
 observeIntersection(".section-hero", (entries) =>
@@ -153,13 +149,6 @@ observeIntersection(".section", (entries) =>
   handleIntersectionTransform(entries, secondHeading, "translateX(0px)")
 );
 
-observeIntersection(".section-pricing", (entries) =>
-  handleIntersectionOpacity(entries, halfOpacity, 1)
-);
-
-observeIntersection(".section-pricing", (entries) =>
-  handleIntersectionOpacity(entries, halfOpacityHeading, 1)
-);
 
 formName.addEventListener("blur", function (e) {
   e.preventDefault();
@@ -187,6 +176,18 @@ closeCircle.addEventListener("click", function (e) {
   cookies.classList.add("hidden");
   setCookiesShown();
 });
+
+function observeIntersection(selector, callback, options = {}) {
+  const element = document.querySelector(selector);
+
+  if (!element) {
+    console.error(`No element found for selector: "${selector}"`);
+    return;
+  }
+
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(element);
+}
 
 const openModal = function (e) {
   e.preventDefault();
