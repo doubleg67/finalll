@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.html {
+    font-size: 62.5%;
+}
+
+.header-por {
+    height: 3rem;
+    padding: 0 3.2rem;
+    background-color: lightgray;
+}
+
+.logo-por {
+    width: 14rem;
+    height: 7rem;
+}
+
+.header-box {
+    margin-top: 5rem;
+    padding: 1rem 3.2rem;
+    border-top: 1px solid lightgray;
+}
+
+.map {
+    margin-top: 1rem;
+    position: relative;
+    width: 100%;
+    height: 75vh;
+}
+
+.input-box {
+    background-color: white;
+    position: absolute;
+    padding: 2rem 1rem;
+    top: 25%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 0.8rem;
+    z-index: 999;
+}
+
+.loc {
+    width: 20rem;
+    text-align: start;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+}
+
+.input-box input {
+    width: 15rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid black;
+    background: transparent;
+}
+
+.search {
+    width: 5rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+}
+
